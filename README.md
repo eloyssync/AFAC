@@ -20,6 +20,9 @@ Desktop application built with Python and PyQt6 for batch metadata removal and m
   - Real-time logging and progress tracking.
   - Automatic output directory opening upon completion.
 
+Download AFAC v2.1.0:
+https://github.com/eloyssync/AFAC/releases/tag/v2.1.0
+
 ## Requirements
 
 - Python 3.10 or higher
