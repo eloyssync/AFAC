@@ -3,12 +3,13 @@
 Ultra-fast desktop application built with C++ and Win32 API for batch metadata removal and media asset randomization (images and videos).
 
 ## Features
-
+<img width="923" height="686" alt="2026-08-28_07-28-26" src="https://github.com/user-attachments/assets/8b705ec6-d71e-44ef-ab12-839d34ff4b73" />
 - **Images (JPG, PNG, WEBP):**
   - Strips all EXIF, XMP, IPTC, and geotag metadata.
   - Applies micro-adjustments to contrast and brightness (±0.4%) to guarantee hash changes without visible quality loss.
   - Performs 1-pixel boundary adjustments to alter the underlying pixel matrix.
   - Modifies MD5 and SHA-256 file hashes.
+
 
 - **Videos (MP4, MOV):**
   - Strips container and stream metadata (`-map_metadata -1`).
