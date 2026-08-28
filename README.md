@@ -1,84 +1,68 @@
 # AFAC (Anti-Fingerprint Asset Cleaner)
 
-Desktop application built with Python and PyQt6 for batch metadata removal and media asset randomization (images and videos).
+Ultra-fast desktop application built with C++ and Win32 API for batch metadata removal and media asset randomization (images and videos).
 
 ## Features
 
 - **Images (JPG, PNG, WEBP):**
   - Strips all EXIF, XMP, IPTC, and geotag metadata.
-  - Applies micro-adjustments to contrast and brightness (+-0.4%) to guarantee hash changes without visible quality loss.
+  - Applies micro-adjustments to contrast and brightness (±0.4%) to guarantee hash changes without visible quality loss.
   - Performs 1-pixel boundary adjustments to alter the underlying pixel matrix.
-  - Modifies MD5 and SHA256 file hashes.
+  - Modifies MD5 and SHA-256 file hashes.
 
 - **Videos (MP4, MOV):**
   - Strips container and stream metadata (`-map_metadata -1`).
-  - Re-encodes with subtle pixel noise and a 10ms audio delay to generate unique file hashes.
+  - Re-encodes with subtle pixel noise and micro-audio adjustments to generate unique file hashes.
 
 - **Interface:**
-  - Drag and drop support for files and folders.
-  - Multi-threaded processing (`QThread`) to ensure a non-blocking UI.
+  - Native Win32 Drag & Drop support for files and folders.
+  - Multi-threaded processing pool for zero UI freezes.
   - Real-time logging and progress tracking.
   - Automatic output directory opening upon completion.
 
-Download AFAC v2.1.0:
-https://github.com/eloyssync/AFAC/releases/tag/v2.1.0
+[Download AFAC v3.0.0](https://github.com/eloyssync/AFAC/releases/tag/3.0.0)
 
 ## Requirements
 
-- Python 3.10 or higher
+- Windows 10 / 11 (x64)
+- MSVC / Visual Studio 2022 (C++20)
 - FFmpeg (required for video processing)
 
-## Installation
+## Installation & Build
 
 1. **Clone the repository:**
 ```bash
 git clone https://github.com/eloyssync/AFAC.git
 cd AFAC
-Create and activate a virtual environment:
+Build:
 
-Bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
+Open AFAC.sln in Visual Studio.
 
-# macOS / Linux
-python3 -m venv venv
-source venv/bin/activate
-Install dependencies:
+Select Release mode (x64).
 
-Bash
-pip install PyQt6 Pillow
-Install FFmpeg:
+Build Solution (Ctrl + Shift + B).
 
-Windows: Place ffmpeg.exe into the project root or add it to your system PATH.
+FFmpeg Setup:
 
-macOS: brew install ffmpeg
-
-Linux: sudo apt update && sudo apt install ffmpeg
+Place ffmpeg.exe into the application directory or ensure it is accessible via system PATH.
 
 Usage
-Run the application:
+Launch AFAC.exe.
 
-Bash
-python afac_app.py
-(or run start.bat on Windows)
-
-Drag and drop media files or directories into the table.
+Drag and drop media files or directories into the window.
 
 Select your processing options.
 
-Click "START PROCESSING".
+Click START PROCESSING.
 
 Processed files are saved to the output/ directory without overwriting originals.
 
 Tech Stack
-Python 3.10+
+C++20
 
-PyQt6 (GUI)
+Native Win32 API
 
-Pillow (Image processing)
-
-FFmpeg (Video processing via subprocess)
+FFmpeg Integration
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
