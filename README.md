@@ -4,6 +4,7 @@ Ultra-fast desktop application built with C++ and Win32 API for batch metadata r
 
 ## Features
 <img width="923" height="686" alt="2026-08-28_07-28-26" src="https://github.com/user-attachments/assets/8b705ec6-d71e-44ef-ab12-839d34ff4b73" />
+
 - **Images (JPG, PNG, WEBP):**
   - Strips all EXIF, XMP, IPTC, and geotag metadata.
   - Applies micro-adjustments to contrast and brightness (±0.4%) to guarantee hash changes without visible quality loss.
